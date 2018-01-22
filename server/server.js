@@ -15,7 +15,7 @@ console.log('- config.mediasoup.logTags:', config.mediasoup.logTags);
 /* eslint-enable no-console */
 
 const fs = require('fs');
-const https = require('https');
+const http = require('http');
 const url = require('url');
 const protooServer = require('protoo-server');
 const mediasoup = require('mediasoup');
