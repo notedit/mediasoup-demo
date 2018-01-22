@@ -87,13 +87,13 @@ const httpServer = http.createServer((req, res) =>
 	res.end();
 });
 
-httpServer.listen(3443, '0.0.0.0', () =>
+httpServer.listen(3444, '0.0.0.0', () =>
 {
 	logger.info('protoo WebSocket server running');
 });
 
 // Protoo WebSocket server.
-const webSocketServer = new protooServer.WebSocketServer(httpsServer,
+const webSocketServer = new protooServer.WebSocketServer(httpServer,
 	{
 		maxReceivedFrameSize     : 960000, // 960 KBytes.
 		maxReceivedMessageSize   : 960000,
