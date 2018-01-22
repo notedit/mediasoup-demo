@@ -75,19 +75,19 @@ mediaServer.on('newroom', (room) =>
 });
 
 // HTTPS server for the protoo WebSocjet server.
-const tls =
-{
-	cert : fs.readFileSync(config.tls.cert),
-	key  : fs.readFileSync(config.tls.key)
-};
+// const tls =
+// {
+// 	cert : fs.readFileSync(config.tls.cert),
+// 	key  : fs.readFileSync(config.tls.key)
+// };
 
-const httpsServer = https.createServer(tls, (req, res) =>
+const httpServer = http.createServer((req, res) =>
 {
 	res.writeHead(404, 'Not Here');
 	res.end();
 });
 
-httpsServer.listen(3443, '0.0.0.0', () =>
+httpServer.listen(3443, '0.0.0.0', () =>
 {
 	logger.info('protoo WebSocket server running');
 });
