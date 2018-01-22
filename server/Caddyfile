@@ -1,0 +1,13 @@
+demo.burfee.com {
+    root /root/mediasoup-demo/server/public
+    errors {
+      404 index.html
+    }
+}
+
+demo.burfee.com:3443 {
+    proxy  / localhost:3444 {
+        transparent
+        websocket
+    }
+}
